@@ -6,7 +6,6 @@ function getComputerChoice() {
 function getHumanChoice() {
     const choice = prompt("Choose rock, paper, or scissors:").toLowerCase();
     return ["rock", "paper", "scissors"].includes(choice) ? choice : getHumanChoice();
-    return alert("You choosed" + choice);
 }
 
 let humanScore = 0;
@@ -20,12 +19,12 @@ function playRound(humanChoice, computerChoice) {
     };
   
     if (humanChoice === computerChoice) {
-      console.log("It's a tie!");
+      alert("It's a tie!");
     } else if (winConditions[humanChoice] === computerChoice) {
-      console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+      alert(`You win! ${humanChoice} beats ${computerChoice}`);
       humanScore++;
     } else {
-      console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+      alert(`You lose! ${computerChoice} beats ${humanChoice}`);
       computerScore++;
     }
   }
@@ -33,15 +32,15 @@ function playRound(humanChoice, computerChoice) {
   function playGame() {
     for (let i = 0; i < 5; i++) {
       playRound(getHumanChoice(), getComputerChoice());
-      console.log(`Score: Human: ${humanScore}, Computer: ${computerScore}`);
+      alert(`Score: Human: ${humanScore}, Computer: ${computerScore}`);
     }
   
     if (humanScore > computerScore) {
-      console.log("You won the game!");
+      alert(`You won the game! Score: ${humanScore} x ${computerScore}`);
     } else if (computerScore > humanScore) {
-      console.log("Computer won the game!");
+      alert(`Computer won the game! Score: ${humanScore} x ${computerScore}`);
     } else {
-      console.log("It's a tie game!");
+      alert(`It's a tie game! Score: ${humanScore} x ${computerScore}`);
     }
   }
   
