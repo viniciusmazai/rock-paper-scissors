@@ -6,6 +6,7 @@ function getComputerChoice() {
 function getHumanChoice() {
     const choice = prompt("Choose rock, paper, or scissors:").toLowerCase();
     return ["rock", "paper", "scissors"].includes(choice) ? choice : getHumanChoice();
+    return alert("You choosed" + choice);
 }
 
 let humanScore = 0;
@@ -44,3 +45,4 @@ function playRound(humanChoice, computerChoice) {
     }
   }
   
+  playGame();
